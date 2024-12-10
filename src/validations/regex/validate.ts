@@ -2,3 +2,6 @@ export const validateRegex = (value: string, regex: RegExp): boolean => regex.te
 export const validateEmail = (email: string, regex = /\S+@\S+\.\S+/): boolean => validateRegex(email, regex);
 export const validatePhoneNumber = (phoneNumber: string, regex = /^[0-9!@#$%^&*()_+{}[\]:;<>,.?~\\|/-]+$/g): boolean =>
   validateRegex(phoneNumber, regex);
+export const validateImage = (url: string) => {
+  return /^https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+};
