@@ -1,35 +1,32 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 export default function useCountdown(initialCount: number, intervalMs = 1000) {
-  const [number, setNumber] = React.useState(initialCount / intervalMs);
-  const timeout = useRef<NodeJS.Timeout>();
+  const [number, setNumber] = useState(initialCount);
+  const timeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (number > 0) {
-      setTimeout(updateNumber, intervalMs);
+      timeout.current = setTimeout(() => updateNumber(), intervalMs);
     }
 
-    return () => clearTimeout(timeout?.current);
-  }, [number]);
+    return () => clearTimeout(timeout.current);
+  }, [number, intervalMs]);
 
   const updateNumber = () => {
     const nextNumber = number - 1;
     setNumber(nextNumber);
 
-    if (nextNumber !== 0) {
-      timeout.current = setTimeout(updateNumber, intervalMs);
+    if (nextNumber > 0) {
+      timeout.current = setTimeout(() => updateNumber(), intervalMs);
     }
   };
 
   const pad = (unit: number) => {
-    const str = `${unit}`;
-    const p = "00";
-    return p.substring(0, p.length - str.length) + str;
+    return unit.toString().padStart(2, "0");
   };
 
-  const humanTime: string = useMemo(() => {
+  const humanTime = useMemo(() => {
     const minutes = Math.floor(number / 60);
-
     return `${minutes}:${pad(number - minutes * 60)}`;
   }, [number]);
 

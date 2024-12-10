@@ -1,5 +1,5 @@
 {
-  "name": "liam-helpers",
+  "name": "liam-utils",
   "version": "1.0.1",
   "description": "Build for utils",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/VPNAM-02/LIAM-utils.git"
   },
-  "homepage": "https://liam02.xyz",
+  "homepage": "https://liam-02.xyz",
   "exports": {
     "./validations/regex": "./dist/validations/regex/index.js",
     "./validations/antd": "./dist/validations/antd/index.js",
@@ -20,16 +20,18 @@
   "scripts": {
     "build": "webpack --config webpack.config.js && tsc"
   },
-  "devDependencies": {
-    "@types/node": "^22.5.4",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.6.2",
-    "webpack-cli": "^5.1.4",
-    "prettier": "^3.3.3"
-  },
   "dependencies": {
     "dayjs": "^1.11.13",
-    "react": "^18.3.1",
-    "react-use": "^17.5.1"
+    "react": "^19.0.0",
+    "react-use": "^17.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/react": "^19.0.1",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   }
 }
