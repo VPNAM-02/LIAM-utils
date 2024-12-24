@@ -1,4 +1,4 @@
-import { validateEmail, validatePhoneNumber } from "../regex";
+import { validateEmail, validatePhoneNumber } from "../validations/regex";
 import { ValidateRule } from "./interface";
 
 const VALIDATOR: ValidateRule = {

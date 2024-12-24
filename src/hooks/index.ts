@@ -1,5 +1,5 @@
-export * from "./useArray";
-export * from "./useHover";
-export * from "./useCountdown";
-export * from "./useDebounceSearch";
-export * from "./useQueryParams";
+export { default as useArray } from "./useArray";
+export { default as useHover } from "./useHover";
+export { default as useCountdown } from "./useCountdown";
+export { default as useDebounceSearch } from "./useDebounceSearch";
+export { default as useQueryParams } from "./useQueryParams";

@@ -1,6 +1,6 @@
 {
-  "name": "liam-utils",
-  "version": "1.0.1",
+  "name": "liam-02-utils",
+  "version": "1.0.0",
   "description": "Build for utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,9 +13,11 @@
   },
   "homepage": "https://liam-02.xyz",
   "exports": {
-    "./validations/regex": "./dist/validations/regex/index.js",
+    "./validations-regex": "./dist/validations/regex/index.js",
     "./validations/antd": "./dist/validations/antd/index.js",
-    "./helpers/transform": "./dist/helpers/transform/index.js"
+    "./helpers/transform": "./dist/helpers/transform/index.js",
+    "./helpers/file": "./dist/helpers/file.js",
+    "./hooks": "./dist/hooks/index.js"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js && tsc"
@@ -28,7 +30,9 @@
   "devDependencies": {
     "@types/node": "^22.5.4",
     "@types/react": "^19.0.1",
+    "clean-webpack-plugin": "^4.0.0",
     "prettier": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.2",
     "webpack": "^5.97.1",
